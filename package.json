@@ -1,0 +1,19 @@
+{
+  "name": "design-pattern-examples",
+  "main": "index.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "bun-types": "latest",
+    "node-ts-dev": "^1.0.0",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
