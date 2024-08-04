@@ -1,1 +1,2 @@
-import "./creational/abstract-factory/solution";
+import "./behavioral/cor/solution";
+
