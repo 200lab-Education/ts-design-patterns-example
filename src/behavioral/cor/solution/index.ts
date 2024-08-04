@@ -35,6 +35,9 @@ class HandlerNode {
 
   // Linked-list example
   static setupCOR(...handlers: Array<Handler>): HandlerNode {
+    if (!handlers || handlers.length == 0)
+      throw new Error('handler cor must have at least one handler');
+
     const hdl = handlers[0];
 
     const node = new HandlerNode(hdl);
