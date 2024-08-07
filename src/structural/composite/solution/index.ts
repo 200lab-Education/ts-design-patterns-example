@@ -1,60 +1,53 @@
 interface IItem {
-  cost(): number;
+  cost(): number
 }
 
 class RealItem implements IItem {
-  constructor(readonly name: string, readonly price: number) { }
+  constructor(
+    readonly name: string,
+    readonly price: number
+  ) {}
 
   cost(): number {
-    return this.price;
+    return this.price
   }
 }
 
 class Box implements IItem {
-  constructor(readonly items: Array<IItem>) { }
+  constructor(readonly items: Array<IItem>) {}
 
   cost(): number {
-    let cost = 0;
+    let cost = 0
 
     for (let i = 0; i < this.items.length; i++) {
-      cost += this.items[i].cost();
+      cost += this.items[i].cost()
     }
 
-    return cost;
+    return cost
   }
 }
 
 function createPackage(): IItem {
-  return new Box(
-    [
-      new RealItem('mouse', 10),
-      new Box(
-        [
-          new RealItem('keyboard', 30),
-          new RealItem('charger', 25),
-        ]
-      )
-    ]
-  );
+  return new Box([new RealItem('mouse', 10), new Box([new RealItem('keyboard', 30), new RealItem('charger', 25)])])
 }
 
-console.log(createPackage().cost());
+console.log(createPackage().cost())
 
 interface TaskHandler {
-  execute(): Promise<boolean>;
+  execute(): Promise<boolean>
 }
 
 class RealTask implements TaskHandler {
   async execute(): Promise<boolean> {
-    return true;
+    return true
   }
 }
 
 class TaskContainer implements TaskHandler {
-  constructor(readonly tasks: Array<TaskHandler>) { };
+  constructor(readonly tasks: Array<TaskHandler>) {}
 
   async execute(): Promise<boolean> {
-    return true;
+    return true
   }
 }
 

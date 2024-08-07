@@ -1,67 +1,70 @@
 interface IDrink {
-  drink(): void;
+  drink(): void
 }
 
 interface IFood {
-  eat(): void;
+  eat(): void
 }
 
 class Cake implements IFood {
-  eat(): void { }
+  eat(): void {}
 }
 
 class Coffee implements IDrink {
-  drink(): void { }
+  drink(): void {}
 }
 
 class Beer implements IDrink {
-  drink(): void { }
+  drink(): void {}
 }
 
 class GrilledOctopus implements IFood {
-  eat(): void { }
+  eat(): void {}
 }
 
 class Voucher {
   // real constructor
-  private constructor(readonly food: IFood, readonly drink: IDrink) { }
+  private constructor(
+    readonly food: IFood,
+    readonly drink: IDrink
+  ) {}
 
   // Factory method or Virtual Constructor
   static getVoucher(campainName: string): Voucher {
-    let factory: VoucherAbstractFactory;
+    let factory: VoucherAbstractFactory
 
     if (campainName === 'creative-morning') {
-      factory = new CreativeMorningFactory();
+      factory = new CreativeMorningFactory()
     } else {
-      factory = new DrinkEveningFactory();
+      factory = new DrinkEveningFactory()
     }
 
-    return new Voucher(factory.getFood(), factory.getDrink());
+    return new Voucher(factory.getFood(), factory.getDrink())
   }
 }
 
 interface VoucherAbstractFactory {
-  getDrink(): IDrink;
-  getFood(): IFood;
+  getDrink(): IDrink
+  getFood(): IFood
 }
 
 class CreativeMorningFactory implements VoucherAbstractFactory {
   getDrink(): IDrink {
-    return new Coffee();
+    return new Coffee()
   }
   getFood(): IFood {
-    return new Cake();
+    return new Cake()
   }
 }
 
 class DrinkEveningFactory implements VoucherAbstractFactory {
   getDrink(): IDrink {
-    return new Beer();
+    return new Beer()
   }
   getFood(): IFood {
-    return new GrilledOctopus();
+    return new GrilledOctopus()
   }
 }
 
-const voucher = Voucher.getVoucher('drink');
-console.log(voucher);
+const voucher = Voucher.getVoucher('drink')
+console.log(voucher)

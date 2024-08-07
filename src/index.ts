@@ -1,2 +1,2 @@
-import "./behavioral/cor/solution";
+import './behavioral/observer/solution';
 
