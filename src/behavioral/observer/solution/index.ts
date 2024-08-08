@@ -52,9 +52,3 @@ itCompany.addNewJob(new Job('Junior React developer'));
 itCompany.removeObserver(developer);
 
 itCompany.addNewJob(new Job('Some boring IT job'));
-
-// Observer hoan toan khong phai la Pub/Sub
-// WHY
-// 1. Observer is sub mechanism. Pub/Sub is both for publish and subscribe
-// 2. Observer have two components: Observer and Subject. Pub/Sub have 3 components: Pub, Sub, Broker
-// 3. Observer is referring non distributed, but pub/sub.
