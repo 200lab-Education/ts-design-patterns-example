@@ -1,2 +1,2 @@
-import './behavioral/mediator/solution';
+import './simple-hexagonal';
 

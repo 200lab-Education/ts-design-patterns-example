@@ -1,0 +1,1 @@
+export const ErrEmailUsed = new Error('this email has been used');
