@@ -1,2 +1,2 @@
-import './simple-hexagonal';
+import './structural/adapter/solution';
 
