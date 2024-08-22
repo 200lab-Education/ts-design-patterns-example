@@ -1,2 +1,2 @@
-import './structural/adapter/solution';
+import './behavioral/memento/solution';
 
