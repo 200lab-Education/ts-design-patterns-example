@@ -1,2 +1,2 @@
-import './behavioral/memento/solution';
+import './behavioral/iterator/solution';
 
