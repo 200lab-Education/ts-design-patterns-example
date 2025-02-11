@@ -123,13 +123,13 @@ const treeOfFollowers: FollowerTreeNode = {
 };
 
 let iterator: IFollowerIterator;
-// console.log("::: Array Iterator");
-// iterator = new FolloweArrayIterator(arrFollowers);
-// sendMessage('hello', iterator);
+console.log("::: Array Iterator");
+iterator = new FolloweArrayIterator(arrFollowers);
+sendMessage('hello', iterator);
 
-// console.log("::: Linked-List Iterator");
-// iterator = new FollowerLinkedListIterator(linkedListOfFollowers);
-// sendMessage('hello', iterator);
+console.log("::: Linked-List Iterator");
+iterator = new FollowerLinkedListIterator(linkedListOfFollowers);
+sendMessage('hello', iterator);
 
 console.log("::: Tree Iterator");
 iterator = new FollowerTreeStore(treeOfFollowers).iterator();

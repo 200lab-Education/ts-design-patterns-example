@@ -85,12 +85,13 @@ class ToolManager implements IMediator {
   }
 }
 
-const manager = new ToolManager(new Tool(false))
+const manager = new ToolManager(new Tool(false));
 
-  ;[
-    new Worker('Viet', manager),
-    new Worker('Ti', manager),
-    new Worker('Teo', manager),
-    new Worker('Nam', manager),
-    new Worker('Thang', manager)
-  ].forEach((v) => v.wantUseTool());
+[
+  new Worker('Viet', manager),
+  new Worker('Ti', manager),
+  new Worker('Teo', manager),
+  new Worker('Nam', manager),
+  new Worker('Thang', manager)
+].forEach((v) => v.wantUseTool());
+

@@ -1,2 +1,1 @@
-import './behavioral/iterator/solution';
-
+import './behavioral/command/solution';

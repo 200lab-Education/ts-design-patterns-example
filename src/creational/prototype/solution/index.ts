@@ -48,6 +48,6 @@ class Color {
   }
 
   compare(c1: Color, c2: Color): boolean {
-    return c1.blue == c2.blue && c1.green == c2.green && c1.red == c2.red;
+    return c1.blue === c2.blue && c1.green === c2.green && c1.red === c2.red;
   }
 }

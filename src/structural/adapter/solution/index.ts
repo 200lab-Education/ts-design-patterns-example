@@ -18,6 +18,8 @@ exec(normalHdl);
 const msgHdl = (msg: string) => console.log(`message handler run with msg: ${msg}`);
 
 
+exec(handlerApdater(msgHdl, 'hello world'));
+
 type anyHdl = (payload: any) => {};
 
 function anyHdlApdater(anyHdl: anyHdl, payload: any): handler {
@@ -25,5 +27,3 @@ function anyHdlApdater(anyHdl: anyHdl, payload: any): handler {
     anyHdl(payload);
   };
 }
-
-exec(handlerApdater(msgHdl, 'hello world'));

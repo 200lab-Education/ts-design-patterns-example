@@ -9,7 +9,10 @@ interface DataPersistent {
   save(data: AppData): Promise<boolean>;
 }
 
-class DataPlatform {
+interface IDataPlatform {
+  process(data: string): Promise<boolean>;
+}
+class DataPlatform implements IDataPlatform {
   constructor(private readonly parser: DataParser, private readonly persistent: DataPersistent) { }
 
   async process(data: string): Promise<boolean> {
@@ -18,6 +21,14 @@ class DataPlatform {
     // do some business login with appData
 
     return await this.persistent.save(appData);
+  }
+}
+
+class ComplexDataPlatform extends DataPlatform {
+  async process(data: string): Promise<boolean> {
+    super.process(data);
+    // do some complex processing
+    return true;
   }
 }
 

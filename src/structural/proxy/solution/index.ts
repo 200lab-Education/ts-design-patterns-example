@@ -35,6 +35,21 @@ class ProxyDataStore implements IRepository {
   }
 }
 
+class WriteDataStore {
+  write(data: number): void {
+    console.log('write');
+  }
+}
+class ProxyWriteDataStore {
+  constructor(private originDataStore: WriteDataStore) { }
+
+  write(data: number): void {
+    this.originDataStore.write(data);
+
+    // update to cache (Redis)
+  }
+}
+
 (async () => {
   const ds = new ProxyDataStore(new DataStore());
   const service = new Service(ds);
